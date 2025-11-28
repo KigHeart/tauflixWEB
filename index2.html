@@ -8,35 +8,103 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 </head>
 <body>
-
   <div class="pattern-overlay"></div>
 
   <header class="glass">
     <div class="container header-container">
-      <div class="logo">
-        <i class="fas fa-film"></i>
-        TAU<span class="accent">FLIX</span>
-      </div>
+      <div class="logo"><i class="fas fa-film"></i> TAU<span class="accent">FLIX</span></div>
       <nav>
-        <a href="index.html" class="active">Home</a>
-        <a href="films.html">Browse</a>
-        <a href="about.html">About</a>
-        <a href="submit.html" class="cta-btn">Submit Film</a>
+        <a href="#home" class="active">Home</a>
+        <a href="#featured">Films</a>
+        <a href="#categories">Categories</a>
+        <a href="#creators">Creators</a>
+        <a href="#about">About</a>
+        <a href="#submit" class="cta-btn">Submit Film</a>
       </nav>
     </div>
   </header>
 
-  <section class="hero">
+  <!-- HERO -->
+  <section id="home" class="hero">
     <div class="hero-content glass-deep">
       <p class="hero-subtitle">AFRICAN CINEMA REIMAGINED</p>
       <h1>TauFlix</h1>
-      <p class="hero-desc">
-        Where the depth of African storytelling meets the sharpest edge of cinematic craft.<br>
-        Human. AI. Unapologetically ours.
-      </p>
+      <p class="hero-desc">Where the depth of African storytelling meets the sharpest edge of cinematic craft. Human. AI. Unapologetically ours.</p>
       <div class="hero-buttons">
-        <a href="films.html" class="btn">Explore Films</a>
-        <a href="submit.html" class="btn" style="background:transparent;">Submit Your Film</a>
+        <a href="#featured" class="btn">Explore Films</a>
+        <a href="#about" class="btn" style="background:transparent;">Our Vision</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURED FILMS -->
+  <section id="featured" class="featured">
+    <div class="container">
+      <h2 class="section-title">Featured Films</h2>
+      <div id="filmsGrid" class="films-grid"></div>
+    </div>
+  </section>
+
+  <!-- CATEGORIES -->
+  <section id="categories" class="categories">
+    <div class="container">
+      <h2 class="section-title">Explore Categories</h2>
+      <div class="grid">
+        <a href="#featured" class="cat-card glass">Afrofuturism</a>
+        <a href="#featured" class="cat-card glass">Drama & Heritage</a>
+        <a href="#featured" class="cat-card glass">Music & Comedy</a>
+        <a href="#featured" class="cat-card glass">Animation</a>
+        <a href="#featured" class="cat-card glass">Documentary</a>
+        <a href="#featured" class="cat-card glass">Nollywood</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CREATORS -->
+  <section id="creators" class="creators">
+    <div class="container">
+      <h2 class="section-title">Meet the Creators</h2>
+      <div class="grid">
+        <div class="creator-card glass">
+          <img src="https://picsum.photos/seed/aisha/300/300" alt="Aisha Okoro" class="creator-avatar">
+          <h3>Aisha Okoro</h3>
+          <p style="color: var(--gold);">Director, Nigeria</p>
+          <p>Afrofuturist visionary behind Lagos 2087.</p>
+        </div>
+        <div class="creator-card glass">
+          <img src="https://picsum.photos/seed/mamadou/300/300" alt="Mamadou Diallo" class="creator-avatar">
+          <h3>Mamadou Diallo</h3>
+          <p style="color: var(--gold);">Storyteller, Senegal</p>
+          <p>Preserving griot traditions in modern tales.</p>
+        </div>
+        <!-- Add more creators -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="about">
+    <div class="container">
+      <h2 class="section-title">Our Mission</h2>
+      <p style="font-size: 1.4rem; color: var(--muted); text-align: center; max-width: 800px; margin: 0 auto; line-height: 1.8;">
+        TauFlix is the first platform dedicated exclusively to African short films — human-crafted and AI-augmented. 
+        We exist to amplify voices from the continent and its diaspora, blending heritage with innovation.
+      </p>
+    </div>
+  </section>
+
+  <!-- SUBMIT (anchored) -->
+  <section id="submit" class="submit">
+    <div class="container">
+      <h2 class="section-title">Submit Your Film</h2>
+      <div class="glass" style="padding: 60px; border-radius: 30px; max-width: 600px; margin: 0 auto;">
+        <form style="display: grid; gap: 20px;">
+          <input type="text" placeholder="Film Title" required style="padding: 18px; background: rgba(0,0,0,0.4); border: 1px solid #444; color: white; border-radius: 12px;">
+          <input type="text" placeholder="Your Name" required style="padding: 18px; background: rgba(0,0,0,0.4); border: 1px solid #444; color: white; border-radius: 12px;">
+          <input type="email" placeholder="Email" required style="padding: 18px; background: rgba(0,0,0,0.4); border: 1px solid #444; color: white; border-radius: 12px;">
+          <input type="url" placeholder="Video Link (Vimeo/YouTube)" required style="padding: 18px; background: rgba(0,0,0,0.4); border: 1px solid #444; color: white; border-radius: 12px;">
+          <button type="submit" class="btn">Submit to TauFlix</button>
+        </form>
       </div>
     </div>
   </section>
@@ -45,10 +113,21 @@
     <div class="container">
       <div class="footer-logo">TAU<span class="accent">FLIX</span></div>
       <p>Celebrating the past, present, and future of African cinema.</p>
-      <p class="copyright">© 2025 TauFlix. Made in Africa</p>
+      <p class="copyright">© 2025 TauFlix. Made in Africa 🌍</p>
     </div>
   </footer>
 
   <script src="js/main.js"></script>
+  <script>
+    // Smooth scrolling for navigation
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+  </script>
 </body>
 </html>
