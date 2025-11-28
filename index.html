@@ -1,0 +1,83 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TauFlix — African Cinema Reimagined</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+</head>
+<body>
+  <div class="pattern-overlay"></div>
+
+  <header class="glass">
+    <div class="container header-container">
+      <div class="logo"><i class="fas fa-film"></i> TAU<span class="accent">FLIX</span></div>
+      <nav>
+        <a href="#home" class="active">Home</a>
+        <a href="#films">Films</a>
+        <a href="#about">About</a>
+        <a href="#submit" class="cta-btn">Submit Film</a>
+      </nav>
+    </div>
+  </header>
+
+  <section id="home" class="hero">
+    <div class="hero-content glass-deep">
+      <p class="hero-subtitle">AFRICAN CINEMA REIMAGINED</p>
+      <h1>TauFlix</h1>
+      <p class="hero-desc">Where the depth of African storytelling meets the sharpest edge of cinematic craft.<br>Human. AI. Unapologetically ours.</p>
+      <div class="hero-buttons">
+        <a href="#films" class="btn">Explore Films</a>
+        <a href="#submit" class="btn" style="background:transparent;">Submit Your Film</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="films" class="featured">
+    <div class="container">
+      <h2 class="section-title">Featured Films</h2>
+      <div id="filmsGrid" class="films-grid"></div>
+    </div>
+  </section>
+
+  <section id="about" class="about">
+    <div class="container">
+      <h2 class="section-title">Our Mission</h2>
+      <p style="font-size:1.4rem;color:var(--muted);text-align:center;max-width:800px;margin:0 auto;line-height:1.8;">
+        TauFlix is the first platform dedicated exclusively to African short films — human-crafted and AI-augmented.
+      </p>
+    </div>
+  </section>
+
+  <section id="submit" class="submit">
+    <div class="container">
+      <h2 class="section-title">Submit Your Film</h2>
+      <div class="glass" style="padding:60px;border-radius:30px;max-width:600px;margin:0 auto;">
+        <form style="display:grid;gap:20px;">
+          <input type="text" placeholder="Film Title" required style="padding:18px;background:rgba(0,0,0,0.4);border:1px solid #444;color:white;border-radius:12px;">
+          <input type="text" placeholder="Your Name" required style="padding:18px;background:rgba(0,0,0,0.4);border:1px solid #444;color:white;border-radius:12px;">
+          <input type="email" placeholder="Email" required style="padding:18px;background:rgba(0,0,0,0.4);border:1px solid #444;color:white;border-radius:12px;">
+          <input type="url" placeholder="Video Link" required style="padding:18px;background:rgba(0,0,0,0.4);border:1px solid #444;color:white;border-radius:12px;">
+          <button type="submit" class="btn">Submit to TauFlix</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-logo">TAU<span class="accent">FLIX</span></div>
+      <p>Celebrating the past, present, and future of African cinema.</p>
+      <p class="copyright">© 2025 TauFlix. Made in Africa 🌍</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script>
+    document.querySelectorAll('a[href^="#"]').forEach(a => a.addEventListener('click', e => {
+      e.preventDefault(); document.querySelector(a.getAttribute('href')).scrollIntoView({behavior:'smooth'});
+    }));
+  </script>
+</body>
+</html>
